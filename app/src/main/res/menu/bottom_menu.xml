@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainPageFragment"
+        android:icon="@drawable/home_icon"
+        android:title="@string/mainTitle"/>
+
+    <item
+        android:id="@+id/money"
+        android:icon="@drawable/money_icon"
+        android:title="@string/moneyTitle"/>
+
+    <item
+        android:id="@+id/chat"
+        android:icon="@drawable/chat_icon"
+        android:title="@string/chatTitle"/>
+
+    <item
+        android:id="@+id/profilFragment"
+        android:icon="@drawable/profile_icon"
+        android:title="@string/profileTitle"/>
+</menu>

@@ -5,4 +5,19 @@
     <string name="logo_text">MOBI MARKET</string>
     <string name="name_field">Имя пользователя</string>
     <string name="password">Пароль</string>
+    <string name="registration">Регистрация</string>
+    <string name="email">Почта</string>
+    <string name="passwordText">Придумайте пароль</string>
+    <string name="requirements">Минимальная длина - 8 симолов. Для надежности пароль должен содержать буквы и цифры</string>
+    <string name="next">Далее</string>
+    <string name="mainTitle">Главная</string>
+    <string name="moneyTitle">Кошелек</string>
+    <string name="chatTitle">Чаты</string>
+    <string name="profileTitle">Профиль</string>
+    <string name="favorites">Понравившиеся</string>
+    <string name="my_items">Мои товары</string>
+    <string name="logout">Выйти</string>
+    <string name="cancel">Отмена</string>
+    <string name="done">Готово</string>
+    <string name="choosePhoto">Выбрать фотографию</string>
 </resources>

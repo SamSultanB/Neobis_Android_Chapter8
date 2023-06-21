@@ -1,4 +1,4 @@
-package sam.sultan.tokenandmedia.ui.authFragments
+package sam.sultan.tokenandmedia.ui.mainFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,24 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import sam.sultan.tokenandmedia.databinding.FragmentCreatePasswordBinding
+import sam.sultan.tokenandmedia.R
+import sam.sultan.tokenandmedia.databinding.FragmentProfilBinding
 
-class CreatePasswordFragment : Fragment() {
+class ProfilFragment : Fragment() {
 
-    lateinit var binding: FragmentCreatePasswordBinding
+    lateinit var binding: FragmentProfilBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentCreatePasswordBinding.inflate(inflater, container, false)
+        binding = FragmentProfilBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.backButton.setOnClickListener { findNavController().navigateUp() }
+        binding.buttonChange.setOnClickListener {
+            findNavController().navigate(R.id.action_profilFragment_to_editProfileFragment)
+        }
     }
 
 }
