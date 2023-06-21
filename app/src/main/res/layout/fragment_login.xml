@@ -38,6 +38,8 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="100dp"
         app:boxStrokeWidthFocused="0dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeColor="@color/teal_200"
         app:helperText=""
         android:textColorHint="@color/teal_200"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,19 +51,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name_field"
+            android:textColor="@color/black"
             android:backgroundTint="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/password"
+        android:id="@+id/emailContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="30dp"
         app:boxStrokeWidthFocused="0dp"
         app:helperText=""
-        app:passwordToggleEnabled="false"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/teal_200"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeColor="@color/teal_200"
         android:textColorHint="@color/teal_200"
         app:layout_constraintEnd_toEndOf="@+id/name"
         app:layout_constraintStart_toStartOf="@+id/name"
@@ -71,13 +77,15 @@
             android:id="@+id/passwordField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:backgroundTint="@color/white"/>
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:inputType="textPassword"
+            android:hint="@string/password" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
@@ -88,10 +96,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/emailContainer" />
 
     <TextView
-        android:id="@+id/register_text"
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -102,8 +110,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:layout_constraintVertical_bias="0.691" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

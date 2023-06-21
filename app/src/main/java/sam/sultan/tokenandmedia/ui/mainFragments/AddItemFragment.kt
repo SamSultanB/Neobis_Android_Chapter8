@@ -6,18 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import sam.sultan.tokenandmedia.R
-import sam.sultan.tokenandmedia.databinding.FragmentMainPageBinding
 
-class MainPageFragment : Fragment() {
 
-    lateinit var binding: FragmentMainPageBinding
+class AddItemFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentMainPageBinding.inflate(inflater, container, false)
-        return binding.root
+        return inflater.inflate(R.layout.fragment_add_item, container, false)
     }
+
 }
