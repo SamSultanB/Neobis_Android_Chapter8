@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import sam.sultan.tokenandmedia.R
 import sam.sultan.tokenandmedia.databinding.FragmentRegistrationBinding
+import sam.sultan.tokenandmedia.view_models.AuthViewModel
 
 class RegistrationFragment : Fragment() {
 
     lateinit var binding: FragmentRegistrationBinding
+    val viewModel = AuthViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,7 +26,17 @@ class RegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.buttonNext.setOnClickListener { findNavController().navigate(R.id.action_registrationFragment_to_createPasswordFragment) }
+        binding.buttonNext.setOnClickListener {
+            val email = binding.emailField.text.toString()
+            val name = binding.nameField.text.toString()
+            if(viewModel.validEmail(email) != null){
+                binding.emailContainer.helperText = viewModel.validEmail(email)
+            }else if(name.isEmpty()){
+                binding.name.helperText = "Введите имя пользователя"
+            }else{
+                findNavController().navigate(R.id.action_registrationFragment_to_createPasswordFragment)
+            }
+        }
         binding.backButton.setOnClickListener { findNavController().navigateUp() }
     }
 

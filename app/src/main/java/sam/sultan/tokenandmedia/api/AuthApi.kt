@@ -18,5 +18,4 @@ interface AuthApi {
     @POST("logout/")
     suspend fun logout(@Body logoutForm: LogoutForm): Response<LogoutForm>
 
-
 }
