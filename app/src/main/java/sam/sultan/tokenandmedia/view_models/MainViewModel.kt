@@ -1,4 +1,6 @@
 package sam.sultan.tokenandmedia.view_models
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel: ViewModel() {
 }
