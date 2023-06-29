@@ -14,4 +14,7 @@
         <item name="android:windowLightStatusBar" tools:targetApi="33">true</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/rounded_corners</item>
+    </style>
 </resources>
