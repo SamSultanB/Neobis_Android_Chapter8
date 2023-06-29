@@ -1,13 +1,19 @@
 package sam.sultan.tokenandmedia.api
 
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.PUT
+import retrofit2.http.GET
+import retrofit2.http.POST
 import sam.sultan.tokenandmedia.entities.ProfileForm
 
 interface MainApi {
 
-    @PUT("profile/")
-    suspend fun setProfile(@Body profileForm: ProfileForm): Response<ProfileForm>
+    @GET("product/")
+    suspend fun getProduts(): Response<List<ProfileForm>>
+
+    @POST("product/")
+    suspend fun saveProduct()
+
+    @GET("product/{id}/")
+    suspend fun getProduct()
 
 }

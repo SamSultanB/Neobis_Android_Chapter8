@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import sam.sultan.tokenandmedia.R
 import sam.sultan.tokenandmedia.databinding.FragmentRegistrationBinding
+import sam.sultan.tokenandmedia.entities.RegistrationForm
 import sam.sultan.tokenandmedia.view_models.AuthViewModel
 
 class RegistrationFragment : Fragment() {
@@ -34,7 +35,10 @@ class RegistrationFragment : Fragment() {
             }else if(name.isEmpty()){
                 binding.name.helperText = "Введите имя пользователя"
             }else{
-                findNavController().navigate(R.id.action_registrationFragment_to_createPasswordFragment)
+                val bundle = Bundle()
+                bundle.putString("name", name)
+                bundle.putString("email", email)
+                findNavController().navigate(R.id.action_registrationFragment_to_createPasswordFragment, bundle)
             }
         }
         binding.backButton.setOnClickListener { findNavController().navigateUp() }

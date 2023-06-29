@@ -1,8 +1,7 @@
 package sam.sultan.tokenandmedia
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import sam.sultan.tokenandmedia.databinding.ActivityMainBinding
@@ -17,5 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navController = supportFragmentManager.findFragmentById(R.id.fragmentContainerView2) as NavHostFragment
         binding.bottomNavigationView.setupWithNavController(navController.navController)
+
     }
+
 }

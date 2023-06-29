@@ -6,23 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import sam.sultan.tokenandmedia.R
-import sam.sultan.tokenandmedia.databinding.FragmentMainPageBinding
+import sam.sultan.tokenandmedia.databinding.FragmentOTRBinding
 
-class MainPageFragment : Fragment() {
+class OTRFragment : Fragment() {
 
-    lateinit var binding: FragmentMainPageBinding
+    lateinit var binding: FragmentOTRBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentMainPageBinding.inflate(inflater, container, false)
+        binding = FragmentOTRBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
 }
