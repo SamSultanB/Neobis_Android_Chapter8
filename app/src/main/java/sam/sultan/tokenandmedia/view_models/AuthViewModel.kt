@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import sam.sultan.tokenandmedia.entities.LoginForm
+import sam.sultan.tokenandmedia.entities.LoginResponse
 import sam.sultan.tokenandmedia.entities.RegistrationForm
 import sam.sultan.tokenandmedia.repositories.AuthRepository
 import sam.sultan.tokenandmedia.utils.Resource
@@ -14,7 +15,7 @@ class AuthViewModel: ViewModel() {
 
     val repository = AuthRepository()
 
-    val login: MutableLiveData<Resource<LoginForm>> = MutableLiveData()
+    val login: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
 
     val registration: MutableLiveData<Resource<RegistrationForm>> = MutableLiveData()
 

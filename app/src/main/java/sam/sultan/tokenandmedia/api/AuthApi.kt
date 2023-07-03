@@ -12,7 +12,7 @@ interface AuthApi {
     suspend fun register(@Body registrationForm: RegistrationForm): Response<RegistrationForm>
 
     @POST("auth/login/")
-    suspend fun login(@Body loginForm: LoginForm): Response<LoginForm>
+    suspend fun login(@Body loginForm: LoginForm): Response<LoginResponse>
 
     @POST("auth/logout/")
     suspend fun logout(@Body logoutForm: LogoutForm): Response<LogoutForm>
