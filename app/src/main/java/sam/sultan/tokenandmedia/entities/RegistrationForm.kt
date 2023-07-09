@@ -1,8 +1,8 @@
 package sam.sultan.tokenandmedia.entities
 
 data class RegistrationForm(
-    val userName: String,
+    val username: String,
     val email: String,
     val password: String,
-    val passwordConfirm: String
+    val confirm_password: String
 )

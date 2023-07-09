@@ -14,8 +14,8 @@
             android:id="@+id/action_profilFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
         <action
-            android:id="@+id/action_profilFragment_to_favoritesFragment"
-            app:destination="@id/favoritesFragment" />
+            android:id="@+id/action_profilFragment_to_myProductsFragment"
+            app:destination="@id/myProductsFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
@@ -42,8 +42,8 @@
         android:label="fragment_add_phone_number"
         tools:layout="@layout/fragment_add_phone_number" />
     <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="sam.sultan.tokenandmedia.ui.mainFragments.FavoritesFragment"
+        android:id="@+id/myProductsFragment"
+        android:name="sam.sultan.tokenandmedia.ui.mainFragments.MyProductsFragment"
         android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
+        tools:layout="@layout/fragment_my_products" />
 </navigation>
