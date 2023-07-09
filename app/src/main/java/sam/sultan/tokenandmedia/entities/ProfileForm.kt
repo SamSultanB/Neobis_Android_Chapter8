@@ -1,9 +1,9 @@
 package sam.sultan.tokenandmedia.entities
 
 data class ProfileForm(
-    val firstName: String,
-    val lastName: String,
-    val userName: String,
-    val birthdate: String,
+    val first_name: String,
+    val last_name: String,
+    val username: String,
+    val birth_date: String,
     val email: String
 )

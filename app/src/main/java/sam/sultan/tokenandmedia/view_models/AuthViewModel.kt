@@ -5,8 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import sam.sultan.tokenandmedia.api.SessionManager
 import sam.sultan.tokenandmedia.entities.LoginForm
 import sam.sultan.tokenandmedia.entities.LoginResponse
+import sam.sultan.tokenandmedia.entities.ProfileForm
 import sam.sultan.tokenandmedia.entities.RegistrationForm
 import sam.sultan.tokenandmedia.repositories.AuthRepository
 import sam.sultan.tokenandmedia.utils.Resource
@@ -17,7 +19,27 @@ class AuthViewModel: ViewModel() {
 
     val login: MutableLiveData<Resource<LoginResponse>> = MutableLiveData()
 
-    val registration: MutableLiveData<Resource<RegistrationForm>> = MutableLiveData()
+    val registration: MutableLiveData<Resource<LoginForm>> = MutableLiveData()
+
+    val profileSet: MutableLiveData<Resource<ProfileForm>> = MutableLiveData()
+
+    val profile: MutableLiveData<Resource<ProfileForm>> = MutableLiveData()
+
+    val sessionManager = SessionManager()
+
+    fun getProfile(){
+        viewModelScope.launch {
+            profile.postValue(Resource.Loading())
+            val response = repository.getProfile()
+            if (response.isSuccessful){
+                response.body()?.let {
+                    profile.postValue(Resource.Success(it))
+                }
+            }else{
+                profile.postValue(Resource.Error(response.message()))
+            }
+        }
+    }
 
     fun registration(registrationForm: RegistrationForm){
         viewModelScope.launch {
@@ -39,6 +61,7 @@ class AuthViewModel: ViewModel() {
             val response = repository.login(loginForm)
             if (response.isSuccessful){
                 response.body()?.let {
+                    sessionManager.saveAuthToken(it.access)
                     login.postValue(Resource.Success(it))
                 }
             }else{

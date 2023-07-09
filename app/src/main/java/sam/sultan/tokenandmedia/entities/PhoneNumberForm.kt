@@ -1,5 +1,5 @@
 package sam.sultan.tokenandmedia.entities
 
 data class PhoneNumberForm(
-    val number: String
+    val phone_number: String
 )
