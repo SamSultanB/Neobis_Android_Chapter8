@@ -12,4 +12,8 @@ class MainRepository {
 
     suspend fun saveProduct(productForm: ProductForm) = mainApi.saveProduct("Bearer ${SessionManager.USER_TOKEN}", productForm)
 
+    suspend fun getProduct(id: Int) = mainApi.getProduct("Bearer ${SessionManager.USER_TOKEN}", id)
+
+    suspend fun deleteProduct(id: Int) = mainApi.deleteProduct("Bearer ${SessionManager.USER_TOKEN}", id)
+
 }
