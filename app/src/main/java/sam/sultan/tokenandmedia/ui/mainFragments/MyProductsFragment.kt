@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import sam.sultan.tokenandmedia.adapters.RecyclerViewAdapter
 import sam.sultan.tokenandmedia.databinding.FragmentMyProductsBinding
-import sam.sultan.tokenandmedia.entities.ProductForm
 import sam.sultan.tokenandmedia.utils.Resource
 import sam.sultan.tokenandmedia.view_models.MainViewModel
 
@@ -42,17 +41,12 @@ class MyProductsFragment : Fragment() {
         binding.recyclerViewFavorites.layoutManager = GridLayoutManager(this.context, 2)
         binding.recyclerViewFavorites.adapter = recyclerView
 
-        viewModel.productsList.observe(viewLifecycleOwner, Observer{response ->
+        viewModel.products.observe(viewLifecycleOwner, Observer{ response ->
             if (response is Resource.Success){
-                if (response.data?.isEmpty() == true){
-                    binding.empty.visibility = View.VISIBLE
-                }else{
-                    response.data?.let { recyclerView.setProductList(it) }
-                    binding.empty.visibility = View.GONE
-                }
-            }else if (response is Resource.Error){
-                binding.empty.visibility = View.GONE
-                Toast.makeText(requireContext(), "Problem", Toast.LENGTH_SHORT).show()
+                response.data?.let { recyclerView.setProductList(it) }
+                Toast.makeText(requireContext(), "Success", Toast.LENGTH_SHORT).show()
+            }else if(response is Resource.Error){
+                Toast.makeText(requireContext(), response.message, Toast.LENGTH_SHORT).show()
             }
         })
 

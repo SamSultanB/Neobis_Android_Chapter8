@@ -2,6 +2,7 @@ package sam.sultan.tokenandmedia.api
 
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
@@ -20,5 +21,8 @@ interface MainApi {
 
     @GET("product/{id}/")
     suspend fun getProduct(@Header("Authorization") token: String, @Path("id") id: Int)
+
+    @DELETE("product/{id}")
+    suspend fun deleteProduct(@Header("Authorization") token: String, @Path("id") id: Int)
 
 }

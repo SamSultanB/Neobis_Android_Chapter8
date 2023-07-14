@@ -16,12 +16,19 @@
         <action
             android:id="@+id/action_profilFragment_to_myProductsFragment"
             app:destination="@id/myProductsFragment" />
+        <action
+            android:id="@+id/action_profilFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainPageFragment"
         android:name="sam.sultan.tokenandmedia.ui.mainFragments.MainPageFragment"
         android:label="fragment_main_page"
-        tools:layout="@layout/fragment_main_page" />
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPageFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="sam.sultan.tokenandmedia.ui.mainFragments.EditProfileFragment"
@@ -35,7 +42,11 @@
         android:id="@+id/addItemFragment"
         android:name="sam.sultan.tokenandmedia.ui.mainFragments.AddItemFragment"
         android:label="fragment_add_item"
-        tools:layout="@layout/fragment_add_item" />
+        tools:layout="@layout/fragment_add_item" >
+        <action
+            android:id="@+id/action_addItemFragment_self"
+            app:destination="@id/addItemFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addPhoneNumberFragment"
         android:name="sam.sultan.tokenandmedia.ui.mainFragments.AddPhoneNumberFragment"

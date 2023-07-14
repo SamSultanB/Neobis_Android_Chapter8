@@ -15,7 +15,7 @@ class MainViewModel: ViewModel() {
 
     val savingProduct: MutableLiveData<Resource<ProductForm>> = MutableLiveData()
 
-    val productsList: MutableLiveData<Resource<List<ProductResponse>>> = MutableLiveData()
+    val products: MutableLiveData<Resource<List<ProductResponse>>> = MutableLiveData()
 
     fun saveProduct(productForm: ProductForm){
         viewModelScope.launch {
@@ -33,14 +33,14 @@ class MainViewModel: ViewModel() {
 
     fun getProducts(){
         viewModelScope.launch {
-            productsList.postValue(Resource.Loading())
+            products.postValue(Resource.Loading())
             val response = repository.getProducts()
             if(response.isSuccessful){
                 response.body()?.let {
-                    productsList.postValue(Resource.Success(it))
+                    products.postValue(Resource.Success(it))
                 }
             }else{
-                productsList.postValue(Resource.Error(response.message()))
+                products.postValue(Resource.Error(response.message()))
             }
         }
     }
